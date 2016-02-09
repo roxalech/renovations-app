@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <button>Add new project</button>
+    </div>
+    <p>View older projects</p>
+    <ul>
+    <% _.each(olderProjects, function(listItem){ %>
+        <li><%- listItem %></li>
+    <% }) %>
+    </ul>
+</div>

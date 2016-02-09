@@ -1,0 +1,14 @@
+<div>
+    <ul>
+    <% _.each(availableProducts, function(listItem){ %>
+
+        <li><% listItem.name %></li>
+        <li><% listItem.price %></li>
+        <li><% listItem.color %></li>
+        <li>
+            Quantity:
+            <input type="text">
+        </li>
+    <% }) %>
+    </ul>
+</div>
