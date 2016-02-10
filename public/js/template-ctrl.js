@@ -1,16 +1,12 @@
+function inherit(proto) {
 
-  var templateLoader = new TemplateLoader();
+  function TemplateCtrl() {}
 
-  var TemplateCtrl = function(){};
+  TemplateCtrl.prototype = proto;
 
+  return new TemplateCtrl
 
-  TemplateCtrl.prototype.loadDashboard = function(olderProj){
-
-      templateLoader.loadTmpl(olderProj, "templates/dashboard.html", function(template){
-        console.log(template);
-        $('#dashboard').html(template);
-      });
-  };
+}
 
 
 

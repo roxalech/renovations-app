@@ -16,8 +16,12 @@
         var exists = verifyCredentials($loginCred, response);
         if(exists){
           $('.login-view').remove();
-          var loadDash = new TemplateCtrl();
-          loadDash.loadDashboard(olderProjects);
+
+          //templateCtrl is an instance of TemplateCtrl that has TemplateLoader as a prototype;
+          var templateCtrl = inherit(TemplateLoader);
+          templateCtrl.load(olderProjects, "templates/dashboard.html", function(template){
+            $('#dashboard').html(template);
+          });
         }
 
       }).fail(function(){
